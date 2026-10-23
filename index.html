@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trợ lý Vạn Kiếp</title>
+<style>
+  :root{--bg:#f3ece0;--card:#fbf7ef;--ink:#1e1512;--muted:#6b5a4a;--red:#7a1f1a;--line:#ddd0b4}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  header{background:var(--red);color:#fff;padding:18px 16px}
+  header h1{margin:0;font-size:22px}
+  header p{margin:4px 0 0;opacity:.85;font-size:14px}
+  main{max-width:640px;margin:0 auto;padding:14px 16px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 14px}
+  h2{font-size:18px;color:var(--red);margin:0 0 8px}
+  ol{padding-left:22px;margin:6px 0}
+  li{margin:6px 0}
+  textarea{width:100%;height:110px;font:13px/1.4 ui-monospace,Menlo,monospace;border:1px solid var(--line);border-radius:8px;padding:8px;background:#fff;color:var(--ink)}
+  button{background:var(--red);color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:16px;margin-top:8px}
+  .ok{color:#1a7f37;font-weight:600;margin-left:8px}
+  .muted{color:var(--muted);font-size:14px}
+  code{background:#efe6d3;border-radius:4px;padding:1px 5px}
+</style>
+</head>
+<body>
+<header><h1>Trợ lý Vạn Kiếp</h1><p>Xếp kinh mạch, tính đột phá, mô phỏng trận, gợi ý đồ — chạy ngay trong trang game.</p></header>
+<main>
+  <div class="card">
+    <h2>1. Chép mã dấu trang</h2>
+    <p class="muted">Đây là đoạn mã của dấu trang. Nó luôn tải bản Trợ lý mới nhất từ trang này, nên khi tool được sửa bạn không phải làm lại dấu trang.</p>
+    <textarea id="bm" readonly></textarea>
+    <button id="cp">Chép mã</button><span id="okmsg" class="ok"></span>
+  </div>
+
+  <div class="card">
+    <h2>2. Tạo dấu trang trên Chrome điện thoại</h2>
+    <ol>
+      <li>Đang ở trang này, bấm <b>⋮</b> (góc trên phải) rồi bấm biểu tượng <b>☆</b> để lưu dấu trang.</li>
+      <li>Bấm <b>⋮ → Dấu trang</b>, tìm dấu trang vừa lưu, giữ tay lên nó rồi chọn <b>Chỉnh sửa</b>.</li>
+      <li>Ô <b>Tên</b>: gõ <code>VK</code> (ngắn cho dễ gõ).</li>
+      <li>Ô <b>URL</b>: xóa hết rồi dán mã vừa chép (bắt đầu bằng <code>javascript:</code>).</li>
+      <li>Bấm mũi tên quay lại để lưu.</li>
+    </ol>
+    <p class="muted">Safari trên iPhone làm tương tự: lưu dấu trang trang này, vào Dấu trang → Sửa → đổi tên thành <code>VK</code> và thay địa chỉ bằng mã.</p>
+  </div>
+
+  <div class="card">
+    <h2>3. Mở Trợ lý khi đang chơi</h2>
+    <ol>
+      <li>Mở game như bình thường và đợi tải xong (đang ở trong kiếp).</li>
+      <li>Chạm vào <b>thanh địa chỉ</b>, gõ <code>VK</code>, rồi chạm vào dòng <b>dấu trang VK</b> hiện ra trong gợi ý (có biểu tượng ngôi sao). Đừng bấm Enter — Enter sẽ tìm kiếm Google.</li>
+      <li>Bảng Trợ lý hiện đè lên game. Lần đầu mất vài giây để tải.</li>
+      <li>Bấm <b>Đóng</b> để về game; nút tròn <b>助</b> ở góc phải mở lại Trợ lý. Chơi tiếp xong thì bấm <b>Làm mới</b> để Trợ lý đọc lại tình trạng mới.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Các tab</h2>
+    <ul>
+      <li><b>Tổng quan</b>: cảnh báo (thọ, lịch luyện, thương thế, đang bị khóa thi, cơ duyên sắp hết), sư môn và điều kiện thăng cấp, sư phụ, nút <i>Đánh thử</i> và <i>Tự kiểm tra</i>.</li>
+      <li><b>Kinh mạch</b>: xếp kinh mạch tối ưu ra ảnh; tìm ô tắc nên mở.</li>
+      <li><b>Đột phá &amp; thọ</b>: còn bao nhiêu năm bế quan mới tới Đại viên mãn, có kịp trước khi hết thọ không; chỗ bế quan tốt nhất gần đây; đan tăng tu vi, kéo thọ, phá bình cảnh; muốn tỉ lệ đột phá cao nhất thì cần gom gì.</li>
+      <li><b>Trận</b>: mô phỏng khảo hạch tông môn, nhiệm vụ trên bảng, đánh thử quái bất kỳ.</li>
+      <li><b>Kiếm linh thạch</b>: các cách kiếm tiền theo thứ tự nên làm; đồ trong túi bán được bao nhiêu; việc treo thưởng quanh đây kèm thưởng và khả năng thắng.</li>
+      <li><b>Chợ quanh đây</b>: hàng đang bày ở các tiệm trong bán kính chọn; món nào đáng mua; tìm bộ 2–3 món mạnh nhất vừa tiền; chỗ bán đan đột phá, dụng cụ nghề.</li>
+      <li><b>Tàng Kinh Các</b>: đồ đổi bằng cống hiến và món nào lợi nhất.</li>
+      <li><b>Luyện đan</b>: tỉ lệ đỗ thi nghề theo từng cách lửa; đan phương đã thuộc nên dùng lửa nào, mỗi mẻ lãi bao nhiêu.</li>
+      <li><b>Bản đồ</b>: cơ duyên và sự kiện đang hiện (đi bao lâu, đánh có thắng không, có thể được gì); tìm đường đi theo chặng ngắn để không bị chặn giữa đường.</li>
+</ul>
+    <p class="muted">Trợ lý chỉ tính toán, không tự bấm gì trong game. Khi game cập nhật, Trợ lý tự dùng code mới của game. Nếu hiện thông báo "Game vừa cập nhật nên tool chưa nhận ra…", chụp màn hình gửi Claude để sửa.</p>
+  </div>
+  <p class="muted" style="text-align:center">Phiên bản tool: <span id="ver">…</span></p>
+</main>
+<script>
+  const base = location.href.replace(/[#?].*$/, '').replace(/index\.html$/, '').replace(/\/?$/, '/');
+  const code = "javascript:(()=>{import('" + base + "vk-tro-ly.js?v='+Date.now()).catch(e=>alert('Không tải được Trợ lý: '+e.message))})()";
+  document.getElementById('bm').value = code;
+  document.getElementById('cp').onclick = async () => {
+    const t = document.getElementById('bm');
+    try { await navigator.clipboard.writeText(code); } catch { t.select(); document.execCommand('copy'); }
+    document.getElementById('okmsg').textContent = 'Đã chép!';
+  };
+  fetch('vk-tro-ly.js', { cache: 'no-store' }).then(r => r.text()).then(t => { const m = /TOOL_VER = '([^']+)'/.exec(t); document.getElementById('ver').textContent = m ? m[1] : '?'; }).catch(() => {});
+</script>
+</body>
+</html>
