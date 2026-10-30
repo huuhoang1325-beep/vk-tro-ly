@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trợ lý Vạn Kiếp</title>
+<style>
+  :root{--bg:#f3ece0;--card:#fbf7ef;--ink:#1e1512;--muted:#6b5a4a;--red:#7a1f1a;--line:#ddd0b4;--ok:#1a7f37}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  header{background:var(--red);color:#fff;padding:20px 16px}
+  header .in{max-width:680px;margin:0 auto}
+  header h1{margin:0;font-size:24px}
+  header p{margin:6px 0 0;opacity:.9;font-size:15px}
+  main{max-width:680px;margin:0 auto;padding:16px 16px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 14px}
+  h2{font-size:18px;color:var(--red);margin:0 0 8px}
+  h3{font-size:16px;margin:12px 0 4px}
+  ol,ul{padding-left:22px;margin:6px 0}
+  li{margin:5px 0}
+  textarea{width:100%;height:96px;font:13px/1.4 ui-monospace,Menlo,monospace;border:1px solid var(--line);border-radius:8px;padding:8px;background:#fff;color:var(--ink)}
+  button{background:var(--red);color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:16px;cursor:pointer}
+  .ok{color:var(--ok);font-weight:600;margin-left:8px}
+  .muted{color:var(--muted);font-size:14px}
+  code{background:#efe6d3;border-radius:4px;padding:1px 5px}
+  .tabs{display:flex;gap:8px;margin:0 0 12px}
+  .tabs button{flex:1;background:#fff;color:var(--red);border:1px solid var(--red)}
+  .tabs button.on{background:var(--red);color:#fff}
+  .drag{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:700;padding:8px 18px;border-radius:8px;margin:4px 0;cursor:grab}
+  .feat{display:grid;grid-template-columns:1fr;gap:6px}
+  .feat div{padding:6px 0;border-bottom:1px dashed var(--line)}
+  .feat div:last-child{border-bottom:0}
+</style>
+</head>
+<body>
+<header><div class="in"><h1>Trợ lý Vạn Kiếp</h1><p>Công cụ hỗ trợ game <b>Vạn Kiếp Tu Tiên</b>: tính trước mọi thứ để khỏi đột phá hụt, đánh thua, hết thọ hay tiêu tiền phí. Chạy ngay trong trang game, miễn phí, không cần cài app.</p></div></header>
+<main>
+  <div class="card">
+    <h2>Làm được gì</h2>
+    <div class="feat">
+      <div><b>Lối build</b> — 22 lối chơi (kiếm, thể, phật, ma, độc cổ, hợp hoan, luyện thi, quỷ, ngự thú, khôi lỗi, phù, trận, đan, luyện bảo, và theo hệ Lôi/Hỏa/Băng…): cốt lõi đọc từ code game, việc cần làm và đồ nên lắp ở từng cảnh giới, đo thử với nhân vật.</div>
+      <div><b>Xếp kinh mạch tối ưu</b> — thử hàng nghìn cách xếp đồ trong túi, đánh thử với quái cùng cảnh giới, ra ảnh cách xếp mạnh nhất và <b>tự xếp vào game</b> bằng một nút bấm; xếp sẵn 2 bộ (bế quan / đi đánh) để đổi bộ trong game; chỉ ô tắc nào nên khai thông.</div>
+      <div><b>Đột phá &amp; thọ</b> — tỉ lệ đột phá theo từng cách dùng đan và đốt thọ; còn bao nhiêu năm mới tới Đại viên mãn, có kịp trước khi hết thọ không; chỗ bế quan tốt nhất gần đây.</div>
+      <div><b>Mô phỏng trận</b> — khảo hạch tông môn, nhiệm vụ, cơ duyên: biết thắng hay thua trước khi đánh, kể cả trận game ghi "không đoán được".</div>
+      <div><b>Kiếm linh thạch</b> — đồ trong túi bán được bao nhiêu, việc treo thưởng nào quanh đây thưởng cao mà đánh thắng chắc.</div>
+      <div><b>Chợ &amp; Tàng Kinh Các</b> — xem hàng các tiệm xung quanh, món nào đáng mua nhất với số linh thạch / cống hiến đang có.</div>
+      <div><b>Đồ nên săn</b> — xét mọi công pháp, pháp khí trong game hợp linh căn và cảnh giới, đo thử trong kinh mạch để biết món nào đáng gom tiền mua nhất, kể cả món chưa thấy ở chợ.</div>
+      <div><b>Đồ trong game</b> — tra cứu hơn 1000 món theo công dụng: đan đột phá, đan thọ, đan chữa thương, phương tiện đi lại, đan lô, khí lô, dị hỏa, đơn phương…</div>
+      <div><b>Luyện đan</b> — tỉ lệ đỗ thi Đan sư theo từng cách lửa; đan nào luyện ra lãi.</div>
+      <div><b>Bản đồ</b> — cơ duyên đang hiện, đường đi theo chặng ngắn để khỏi bị chặn giữa đường; cảnh báo khi thọ, lịch luyện, thương thế có vấn đề.</div>
+    </div>
+    <p class="muted" style="margin:8px 0 0">Tool chỉ đọc và tính toán, không tự bấm gì trong game, không gửi save của bạn đi đâu. Mọi con số tính bằng chính code của game, game cập nhật thì tool tự dùng code mới.</p>
+  </div>
+
+  <div class="card">
+    <h2>Cài đặt (làm 1 lần)</h2>
+    <div class="tabs"><button id="t-mb" class="on">Điện thoại</button><button id="t-pc">Máy tính</button></div>
+
+    <div id="p-mb">
+      <h3>1. Chép mã</h3>
+      <textarea class="bmcode" readonly></textarea>
+      <button class="cp">Chép mã</button><span class="ok okmsg"></span>
+      <h3>2. Tạo dấu trang (Chrome Android)</h3>
+      <ol>
+        <li>Ngay trang này, bấm <b>⋮</b> (góc trên phải) → bấm <b>☆</b> để lưu dấu trang.</li>
+        <li>Bấm <b>⋮ → Dấu trang</b>, giữ tay lên dấu trang vừa lưu → <b>Chỉnh sửa</b>.</li>
+        <li>Ô <b>Tên</b>: gõ <code>VK</code>.</li>
+        <li>Ô <b>URL</b>: xóa hết, dán mã vừa chép (bắt đầu bằng <code>javascript:</code>) → quay lại để lưu.</li>
+      </ol>
+      <p class="muted">iPhone (Safari): lưu dấu trang trang này → vào Dấu trang → <b>Sửa</b> → đổi tên <code>VK</code>, thay địa chỉ bằng mã.</p>
+      <h3>3. Dùng khi chơi</h3>
+      <ol>
+        <li>Mở game, đợi vào kiếp.</li>
+        <li>Chạm <b>thanh địa chỉ</b>, gõ <code>VK</code>, chạm vào dòng <b>dấu trang VK</b> (có hình ngôi sao) trong gợi ý. <b>Đừng bấm Enter</b> — Enter sẽ tìm Google.</li>
+        <li>Bảng Trợ lý hiện lên. Bấm <b>Đóng</b> để về game, nút tròn <b>助</b> ở góc phải để mở lại.</li>
+      </ol>
+    </div>
+
+    <div id="p-pc" hidden>
+      <h3>Cách nhanh: kéo thả</h3>
+      <ol>
+        <li>Bấm <b>Ctrl + Shift + B</b> (Mac: <b>⌘ + Shift + B</b>) cho hiện thanh dấu trang.</li>
+        <li>Giữ chuột vào nút dưới đây và <b>kéo thả lên thanh dấu trang</b>:<br><a class="drag" id="dragbm" href="#">VK</a></li>
+      </ol>
+      <h3>Hoặc tạo bằng tay</h3>
+      <ol>
+        <li>Bấm <b>Chép mã</b>:<br><textarea class="bmcode" readonly></textarea><button class="cp">Chép mã</button><span class="ok okmsg"></span></li>
+        <li>Chuột phải vào thanh dấu trang → <b>Thêm trang…</b>. Tên: <code>VK</code>, URL: dán mã → <b>Lưu</b>.</li>
+      </ol>
+      <h3>Dùng khi chơi</h3>
+      <ol>
+        <li>Mở game, đợi vào kiếp, bấm nút <b>VK</b> trên thanh dấu trang.</li>
+        <li>Bấm <b>Đóng</b> để về game, nút tròn <b>助</b> để mở lại.</li>
+      </ol>
+      <p class="muted">Đừng dán mã vào thanh địa chỉ rồi Enter: Chrome sẽ tự xóa chữ <code>javascript:</code>. Chỉ dùng qua dấu trang.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Mẹo dùng</h2>
+    <ul>
+      <li>Chơi tiếp một lúc thì bấm <b>Làm mới</b> trên Trợ lý để nó đọc lại tình trạng mới.</li>
+      <li>Có đồ mới hoặc lên cảnh giới → vào tab <b>Kinh mạch</b> bấm <i>Bắt đầu xếp</i>, rồi bấm <i>Tự xếp vào game</i>.</li>
+      <li>Trước khi đột phá, khảo hạch hay nhận việc khó → xem tab <b>Đột phá &amp; thọ</b>, <b>Trận</b>.</li>
+      <li>Các phần đo lâu (xếp kinh mạch, đo giá trị đồ) chạy nhanh hơn trên máy tính.</li>
+      <li>Nếu Trợ lý báo lỗi sau khi game cập nhật: tab Tổng quan → <b>Tự kiểm tra</b>, chụp màn hình gửi người chia sẻ tool cho bạn.</li>
+    </ul>
+  </div>
+  <p class="muted" style="text-align:center">Phiên bản tool: <span id="ver">…</span></p>
+</main>
+<script>
+  const base = location.href.replace(/[#?].*$/, '').replace(/index\.html$/, '').replace(/\/?$/, '/');
+  const code = "javascript:(()=>{import('" + base + "vk-tro-ly.js?v='+Date.now()).catch(e=>alert('Không tải được Trợ lý: '+e.message))})()";
+  document.querySelectorAll('.bmcode').forEach((t) => (t.value = code));
+  document.getElementById('dragbm').href = code;
+  document.getElementById('dragbm').addEventListener('click', (e) => { e.preventDefault(); alert('Hãy kéo nút VK lên thanh dấu trang, đừng bấm.'); });
+  document.querySelectorAll('.cp').forEach((b) => (b.onclick = async () => {
+    const t = b.previousElementSibling && b.previousElementSibling.tagName === 'TEXTAREA' ? b.previousElementSibling : document.querySelector('.bmcode');
+    try { await navigator.clipboard.writeText(code); } catch { t.select(); document.execCommand('copy'); }
+    b.nextElementSibling.textContent = 'Đã chép!';
+  }));
+  const tabs = { mb: document.getElementById('p-mb'), pc: document.getElementById('p-pc') };
+  const show = (k) => { tabs.mb.hidden = k !== 'mb'; tabs.pc.hidden = k !== 'pc'; document.getElementById('t-mb').classList.toggle('on', k === 'mb'); document.getElementById('t-pc').classList.toggle('on', k === 'pc'); };
+  document.getElementById('t-mb').onclick = () => show('mb');
+  document.getElementById('t-pc').onclick = () => show('pc');
+  if (!/Android|iPhone|iPad|Mobile/i.test(navigator.userAgent)) show('pc');
+  fetch('vk-tro-ly.js', { cache: 'no-store' }).then(r => r.text()).then(t => { const m = /TOOL_VER = '([^']+)'/.exec(t); document.getElementById('ver').textContent = m ? m[1] : '?'; }).catch(() => {});
+</script>
+</body>
+</html>
